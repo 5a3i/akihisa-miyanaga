@@ -7,40 +7,45 @@
 /* 2. Caymanのデフォルト設定を読み込み */
 @import "{{ site.theme }}";
 
-/* 3. ここからITANDI風デザインへの上書き */
+/* --- ここからITANDI風（オレンジアクセント）への上書き --- */
 
-/* 全体のフォント設定：モダンなゴシック体に */
+/* カラー変数の定義（ITANDI風オレンジ） */
+$brand-orange: #F0681F;
+$text-black: #333;
+
+/* 全体のフォント設定 */
 body {
   font-family: 'Noto Sans JP', "Helvetica Neue", Arial, sans-serif;
-  color: #333; /* 真っ黒ではなく少しグレーにすると洗練されます */
+  color: $text-black;
   background-color: #fff;
-  line-height: 1.8; /* 行間を広げて読みやすく */
+  line-height: 1.8;
 }
 
-/* ヘッダーエリア：グラデーションを消して白黒でシンプルに */
+/* ヘッダーエリア */
 .page-header {
-  background-image: none; /* グラデーション削除 */
-  background-color: #fff; /* 背景を白に */
-  color: #000; /* 文字を黒に */
-  border-bottom: 1px solid #eee; /* 薄い区切り線 */
-  padding: 4rem 2rem; /* 余白を調整 */
+  background-image: none;
+  background-color: #fff;
+  color: $text-black;
+  border-bottom: 1px solid #eee;
+  padding: 4rem 2rem;
 }
 
-/* タイトルのデザイン */
 .project-name {
   color: #000;
   font-weight: 700;
-  letter-spacing: 0.05em; /* 文字間隔を少し広げる */
+  letter-spacing: 0.05em;
 }
 
+/* サブタイトルに少しオレンジのニュアンスを（オプション） */
 .project-tagline {
-  color: #666; /* サブタイトルはグレーで */
-  font-weight: 400;
+  color: $brand-orange; /* ここをオレンジに */
+  font-weight: 700;
+  opacity: 0.9;
 }
 
 /* メインコンテンツエリア */
 .main-content {
-  max-width: 54rem; /* 幅を少し広げてダイナミックに */
+  max-width: 54rem;
   padding: 4rem 2rem;
 }
 
@@ -52,31 +57,38 @@ body {
 }
 
 .main-content h2 {
-  border-bottom: none; /* デフォルトの下線を消す */
+  border-bottom: none;
   font-size: 2rem;
   margin-bottom: 1.5rem;
 }
 
-/* ボタンのデザイン：ITANDI風のシャープなボタンに */
+/* --- ここが変更点：ボタンのデザイン --- */
 .btn {
-  background-color: #000; /* 黒背景 */
-  background-image: none; /* グラデーション削除 */
-  color: #fff;
-  border-radius: 0; /* 角丸をなくして四角く（モダン感） */
+  background-color: $brand-orange; /* 背景をオレンジに */
+  background-image: none;
+  color: #fff; /* 文字は白 */
+  border-radius: 0; /* 角丸なし */
   padding: 0.8rem 2rem;
   font-weight: 700;
-  border: 1px solid #000;
+  border: 2px solid $brand-orange; /* 枠線もオレンジ */
   transition: all 0.3s ease;
 }
 
+/* ホバー時の挙動（反転） */
 .btn:hover {
-  background-color: #fff; /* ホバー時は白背景に */
-  color: #000;
+  background-color: #fff; /* 背景を白に */
+  color: $brand-orange; /* 文字をオレンジに */
   text-decoration: none;
+  border: 2px solid $brand-orange; /* 枠線は維持 */
 }
 
-/* リンクの色 */
+/* --- ここが変更点：リンクの色 --- */
 a {
-  color: #000;
+  color: $brand-orange; /* リンクをオレンジに */
   text-decoration: underline;
+  transition: opacity 0.3s ease;
+}
+
+a:hover {
+  opacity: 0.7; /* ホバー時に少し薄く */
 }
