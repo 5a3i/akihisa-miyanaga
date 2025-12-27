@@ -1,0 +1,82 @@
+---
+---
+
+/* 1. 日本語フォント（Noto Sans JP）をGoogle Fontsから読み込み */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap');
+
+/* 2. Caymanのデフォルト設定を読み込み */
+@import "{{ site.theme }}";
+
+/* 3. ここからITANDI風デザインへの上書き */
+
+/* 全体のフォント設定：モダンなゴシック体に */
+body {
+  font-family: 'Noto Sans JP', "Helvetica Neue", Arial, sans-serif;
+  color: #333; /* 真っ黒ではなく少しグレーにすると洗練されます */
+  background-color: #fff;
+  line-height: 1.8; /* 行間を広げて読みやすく */
+}
+
+/* ヘッダーエリア：グラデーションを消して白黒でシンプルに */
+.page-header {
+  background-image: none; /* グラデーション削除 */
+  background-color: #fff; /* 背景を白に */
+  color: #000; /* 文字を黒に */
+  border-bottom: 1px solid #eee; /* 薄い区切り線 */
+  padding: 4rem 2rem; /* 余白を調整 */
+}
+
+/* タイトルのデザイン */
+.project-name {
+  color: #000;
+  font-weight: 700;
+  letter-spacing: 0.05em; /* 文字間隔を少し広げる */
+}
+
+.project-tagline {
+  color: #666; /* サブタイトルはグレーで */
+  font-weight: 400;
+}
+
+/* メインコンテンツエリア */
+.main-content {
+  max-width: 54rem; /* 幅を少し広げてダイナミックに */
+  padding: 4rem 2rem;
+}
+
+/* 見出しのデザイン */
+.main-content h1, .main-content h2, .main-content h3 {
+  color: #000;
+  margin-top: 3rem;
+  font-weight: 700;
+}
+
+.main-content h2 {
+  border-bottom: none; /* デフォルトの下線を消す */
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+}
+
+/* ボタンのデザイン：ITANDI風のシャープなボタンに */
+.btn {
+  background-color: #000; /* 黒背景 */
+  background-image: none; /* グラデーション削除 */
+  color: #fff;
+  border-radius: 0; /* 角丸をなくして四角く（モダン感） */
+  padding: 0.8rem 2rem;
+  font-weight: 700;
+  border: 1px solid #000;
+  transition: all 0.3s ease;
+}
+
+.btn:hover {
+  background-color: #fff; /* ホバー時は白背景に */
+  color: #000;
+  text-decoration: none;
+}
+
+/* リンクの色 */
+a {
+  color: #000;
+  text-decoration: underline;
+}
